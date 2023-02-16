@@ -1,0 +1,64 @@
+.backText {
+  display: block;
+  width: 60px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+  border: 1px solid orange;
+  text-decoration: none;
+  margin-left: 45px;
+}
+.backText:hover {
+  color: white;
+  background-color: orange;
+}
+
+.backLink {
+  text-decoration: none;
+}
+.InfoWrapper {
+  height: 90px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.InfoList {
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+
+  padding: 0px;
+}
+
+.InfoItem {
+  font-size: 23px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.active {
+  color: white;
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid orange;
+  text-decoration: none;
+  text-decoration: none;
+}
+
+.inActive {
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+  border: 1px solid orange;
+  text-decoration: none;
+}

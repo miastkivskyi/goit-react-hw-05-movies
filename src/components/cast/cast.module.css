@@ -1,0 +1,56 @@
+.castList {
+  display: grid;
+  max-width: calc(100vw - 52px);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 26px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  padding: 40px;
+}
+
+.castItem {
+  height: 190px;
+  width: 100px;
+  overflow: hidden;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.castWrapImg {
+  height: 155px;
+  display: flex;
+  align-items: center;
+}
+
+.castImg {
+  border-radius: 10px;
+}
+
+.castConteinerText {
+  text-align: center;
+}
+
+.button {
+  display: block;
+  width: 90px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+  border: 1px solid orange;
+  text-decoration: none;
+}
+.button:hover {
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}

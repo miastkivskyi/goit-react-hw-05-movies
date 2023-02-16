@@ -1,0 +1,31 @@
+.reviewsList {
+  padding: 0px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.reviewsItem {
+  list-style: none;
+}
+
+.button {
+  display: block;
+  width: 90px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: orange;
+  font-weight: 500;
+  border: 1px solid orange;
+  text-decoration: none;
+}
+.button:hover {
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+}
+
+.message {
+  text-align: center;
+}

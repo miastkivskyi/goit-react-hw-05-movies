@@ -1,0 +1,40 @@
+.detailsWrapper {
+  display: flex;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.detailsInnerWrapper {
+  display: flex;
+}
+
+.detailsWrapperImg {
+  margin-right: 30px;
+}
+
+.detailsImg {
+  border-radius: 10px;
+}
+
+.detailsWrapperInfo {
+  display: block;
+  width: 700px;
+
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.detailsTitle {
+  text-transform: uppercase;
+}
+
+.detailsSpan {
+  text-transform: none;
+  font-weight: 600;
+}
+
+.detailsText {
+  font-weight: 400;
+}

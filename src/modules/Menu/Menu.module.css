@@ -1,0 +1,31 @@
+.wrapper {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url(../../images//vector-JUL-2021-84.jpg);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin-right: 40px;
+}
+
+.link.active {
+  color: #e8ede7;
+  background-color: #012e4a;
+  border: 1px solid orange;
+}
+.link {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #81bece;
+  font-weight: 500;
+}
+
+.link:hover:not(.active),
+.link:focus:not(.active) {
+  color: #e8ede7;
+}
