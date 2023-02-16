@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchFilm } from '../../shared/api';
 
@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Loader from '../../components/loader/loader';
 import MoviesGallary from '../../components/moviesGallery/moviesGallery';
+import MovieSearch from 'components/movieSearch/movieSearch';
 
-import { ImSearch } from 'react-icons/im';
 import css from '../Movies/Movies.module.css';
 
 const Movies = () => {
@@ -18,60 +18,40 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  async function fetchToSearch() {
-    try {
-      setIsLoading(true);
-      const r = await searchFilm(query);
-
-      if (r.length > 0) {
-        return setMovies(r);
-      } else {
-        setMovies([]);
-        return toast.error(
-          'Sorry, there are no images matching your search query.'
-        );
-      }
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    if (query.trim() === '') {
-      toast.error('Please enter some world');
+  useEffect(() => {
+    if (!query) {
       return;
     }
+    async function fetchToSearch() {
+      try {
+        setIsLoading(true);
+        const r = await searchFilm(query);
+
+        if (r.length > 0) {
+          return setMovies(r);
+        } else {
+          setMovies([]);
+          return toast.error(
+            'Sorry, there are no movies matching your search query.'
+          );
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
     fetchToSearch();
-    query = '';
-  };
-  const updateQueryString = query => {
-    const nextParams = query !== '' ? { query } : {};
-    setSearchParams(nextParams);
+  }, [query]);
+
+  const updateQueryString = value => {
+    setSearchParams({ query: `${value}` });
   };
 
   return (
     <div>
-      {isLoading && <Loader />}
       <div className={css.formContainer}>
-        <form className={css.form} onSubmit={handleSubmit}>
-          <button type="submit" className={css.searchFormButton}>
-            <ImSearch className={css.searchImg} />
-          </button>
-          <input
-            type="text"
-            autoComplete="off"
-            autoFocus
-            className={css.formInput}
-            placeholder="Search your film..."
-            onChange={e => updateQueryString(e.target.value.toLowerCase())}
-            value={query}
-          />
-        </form>
-
+        <MovieSearch query={query} onSearch={updateQueryString} />
         <main>
           {isLoading && <Loader />}
           {error && <h2>{error}</h2>}
